@@ -47,8 +47,10 @@ final class CategoryFactory extends ModelFactory
     protected function getDefaults(): array
     {
         return [
-            'name' => self::faker()->word(),
-            'slug' => self::faker()->word(),
+            'name' => $name = self::faker()->unique()->word(),
+            'slug' => strtolower(
+                str_replace(' ', '-', $name)
+            ),
         ];
     }
 
