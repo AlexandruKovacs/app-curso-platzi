@@ -11,6 +11,9 @@
         <em>{{ post.comments|length }}</em> comentarios
     </p>
     <div>
+
+        {% include('page/_comment-form.html.twig') %}
+
         {% for comment in post.comments %}
             <h4>{{ comment.user }}</h4>
             <p>{{ comment.content }}</p>
