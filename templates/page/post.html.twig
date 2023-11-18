@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PageController!{% endblock %}
+
+{% block body %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>
+        <strong>{{ post.category.name }}</strong>
+        -
+        <em>{{ post.comments|length }}</em> comentarios
+    </p>
+    <div>
+        {% for comment in post.comments %}
+            <h4>{{ comment.user }}</h4>
+            <p>{{ comment.content }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}
