@@ -5,11 +5,7 @@
 {% block body %}
     <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
-    <p>
-        <strong>{{ post.category.name }}</strong>
-        -
-        <em>{{ post.comments|length }}</em> comentarios
-    </p>
+        {% include('page/_info.html.twig') %}
     <div>
 
         {% include('page/_comment-form.html.twig') %}
